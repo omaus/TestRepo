@@ -42,7 +42,7 @@ jobs:
           #git config --local user.name "TestRepo GitHub action"
           #git add .
           #git commit -m "Update Readme via GitHub action"
-          git config --local user.email ""
+          git config --local user.email "x"
           git config --local user.name "Unit tests"
           git add .
           git commit -m "Apply unit tests"
