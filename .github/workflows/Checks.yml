@@ -34,6 +34,7 @@ jobs:
 
       - name: Run testscript
         run: dotnet fsi testScript.fsx
+        #run: dotnet fsi unitTestScript.fsx
 
       - name: Git add & commit
         run: |
@@ -41,11 +42,15 @@ jobs:
           git config --local user.name "TestRepo GitHub action"
           git add .
           git commit -m "Update Readme via GitHub action"
+          #git config --local user.email ""
+          #git config --local user.name "Unit tests"
+          #git add .
+          #git commit -m "Apply unit tests"
 
       - name: Push changes # push the output folder to your repo
         uses: ad-m/github-push-action@master
         with:
-          #branch: B77 #ignore if your branch is master
+          branch: UnitTestResult #ignore if your branch is master
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
 
