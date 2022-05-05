@@ -33,40 +33,19 @@ jobs:
         run: dotnet tool restore
 
       - name: Run testscript
-        run: dotnet fsi testScript.fsx
-        #run: dotnet fsi unitTestScript.fsx
+        #run: dotnet fsi testScript.fsx
+        run: dotnet fsi unitTestScript.fsx
 
       - name: Git add & commit
         run: |
-          git config --local user.email "funny@fun.de"
-          git config --local user.name "TestRepo GitHub action"
-          git add .
-          git commit -m "Update Readme via GitHub action"
-          #git config --local user.email ""
-          #git config --local user.name "Unit tests"
+          #git config --local user.email "funny@fun.de"
+          #git config --local user.name "TestRepo GitHub action"
           #git add .
-          #git commit -m "Apply unit tests"
-
-      - name: Push changes # push the output folder to your repo
-        uses: ad-m/github-push-action@master
-        with:
-          branch: UnitTestResult #ignore if your branch is master
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          force: true
-
-
-
-
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          #git commit -m "Update Readme via GitHub action"
+          git config --local user.email ""
+          git config --local user.name "Unit tests"
+          git add .
+          git commit -m "Apply unit tests"
       
       ## Run external tool
       #- name: Run external tool
@@ -75,3 +54,10 @@ jobs:
       #    $url = "https://seafile.rlp.net/f/0e68b477bcbe4ec3b757/?dl=1"
       #    $client.DownloadFile($url, ".\ExpectoPatronumDL.exe")
       #    ./ExpectoPatronumDL.exe
+
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          branch: UnitTestResult #ignore if your branch is master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
