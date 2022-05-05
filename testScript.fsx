@@ -18,7 +18,7 @@ let currentAttempt =
 
 let newText = [|
     yield! currentText
-    $"\nHello, World (from GitHub actions & FSI script)!\n&nbsp;&nbsp;&nbsp;&nbsp;Attempt #{currentAttempt + 1}"
+    $"\nHello, World (from GitHub actions & FSI script)!  \n&nbsp;&nbsp;&nbsp;&nbsp;Attempt #{currentAttempt + 1}"
 |]
 
 File.WriteAllLines(path, newText)

@@ -37,8 +37,8 @@ jobs:
 
       - name: Git add & commit
         run: |
-          git config --local user.email "test@github.com"
-          git config --local user.name "GitHub Action test"
+          git config --local user.email "funny@fun.de"
+          git config --local user.name "TestRepo GitHub action"
           git add .
           git commit -m "Update Readme via GitHub action"
 
