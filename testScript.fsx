@@ -1,11 +1,24 @@
+#r "nuget: FSharpAux"
+
+open System
 open System.IO
+open FSharpAux
 
-File.WriteAllLines(
-    Path.Combine(__SOURCE_DIRECTORY__, "README.md"), 
-    Array.singleton "Hello, World (from GitHub actions & FSI script)!"
-)
+let path = Path.Combine(Directory.GetCurrentDirectory(), "README.md")
+//let path = Path.Combine(__SOURCE_DIRECTORY__, "README.md")
 
-//File.WriteAllLines(
-//    Path.Combine(Directory.GetCurrentDirectory(), "README.md"), 
-//    Array.singleton "Hello, World (from GitHub actions & FSI script)!"
-//)
+let currentText = File.ReadAllLines path
+
+let currentAttempt = 
+    Array.last currentText 
+    |> String.toCharArray
+    |> Array.skipWhile (Char.IsDigit >> not)
+    |> String
+    |> int
+
+let newText = [|
+    yield! currentText
+    $"\nHello, World (from GitHub actions & FSI script)!\n\tAttempt #{currentAttempt + 1}"
+|]
+
+File.WriteAllLines(path, newText)
