@@ -39,25 +39,33 @@ File.WriteAllText(outputPath, results.ToString())
 //project.Save(outputPath, Saving.SaveFileFormat.Html)
 
 
-// Individual parsing approach:
+// Individual parsing approach, using System.Xml:
 
+[<CLIMutable>]
+[<XmlTypeAttribute("Employee")>]
 type Employee = {
+    [<XmlAttribute("Name")>]
     Name    : string
+    [<XmlAttribute("Age")>]
     Age     : string // int
 }
 
 
-//type Company() = 
-//    //[<XmlElement(ElementName = "Employee")>]
-//    member this.Employees   : Employee list
-//    end
-
-[<CLIMutable>]
-[<XmlTypeAttribute("item")>]
-type item = {
-    
+[<XmlRootAttribute(ElementName = "Company")>]
+type Company = {
+    //[<XmlTypeAttribute("Employee")>]
+    Employee    : Employee
 }
 
-let path = Path.Combine(__SOURCE_DIRECTORY__, "textXml.xml")
+let path = Path.Combine(__SOURCE_DIRECTORY__, "testXml.xml")
 
 let ser = new XmlSerializer(typeof<Company>)
+
+ser
+
+
+// Individual parsing approach, using System.Xml.Linq:
+
+let xmlDoc = new XmlDocument()
+
+let 
