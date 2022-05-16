@@ -35,7 +35,10 @@ let concatinatedParsedInput = parsedInput |> String.concat "\n"
 
 let res =
     """# Unit Test Result:  
+    ```xml
     """
-    + concatinatedParsedInput
+    + concatinatedParsedInput + 
+    """
+    ```"""
 
 File.WriteAllText(outputPath, res)
