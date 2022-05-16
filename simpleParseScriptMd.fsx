@@ -10,35 +10,41 @@ let input = File.ReadAllText inputPath
 
 let splittedInput = String.split '>' input
 
+let recoveredSplittedInput = splittedInput |> Array.map (fun str -> $"{str}>")
+
 let rec indent level i (oldArr : string []) newArr =
+    let line = oldArr.[i]
+    let currLevel = 
+        if String.contains "</" line then level - 1
+        else level
+    let spaces = String.init currLevel (fun _ -> "  ")
     if i < oldArr.Length - 1 then
-        let line = oldArr.[i]
-        let spaces = String.init level (fun _ -> " ")
-        let newLevel = 
-            if String.contains "/>" line then level - 1 
-            elif String.contains ">" line && String.contains "/>" line |> not then level + 1
+        let newLevel =
+            if String.contains "?>" line then level
+            elif 
+                String.contains ">" line && 
+                not <| String.contains "/>" line &&
+                not <| String.contains "</" line
+                then level + 1
             else level
         let newNewArr = [|yield! newArr; $"{spaces}{line}"|]
-        indent newLevel (i + 1) oldArr newNewArr
+        let finalLevel = newLevel - System.Math.Abs(newLevel - currLevel)
+        indent finalLevel (i + 1) oldArr newNewArr
     else 
-        let line = oldArr.[i]
-        let spaces = String.init level (fun _ -> " ")
-        let newLevel = 
-            if String.contains "/>" line then level - 1 
-            elif String.contains ">" line && String.contains "/>" line |> not then level + 1
-            else level
         [|yield! newArr; $"{spaces}{line}"|]
 
-let parsedInput = indent 0 0 splittedInput [||]
+let parsedInput = indent 0 0 recoveredSplittedInput [||]
 
-let concatinatedParsedInput = parsedInput |> String.concat "\n"
+let adjustedParsedInput = parsedInput |> Array.rev |> Array.skip 1 |> Array.rev
+
+let concatinatedParsedInput = adjustedParsedInput |> String.concat "\n"
 
 let res =
     """# Unit Test Result:  
-    ```xml
-    """
+```xml
+"""
     + concatinatedParsedInput + 
     """
-    ```"""
+```"""
 
 File.WriteAllText(outputPath, res)
