@@ -34,7 +34,9 @@ jobs:
 
       - name: Run testscript
         #run: dotnet fsi testScript.fsx
-        run: dotnet fsi unitTestScript.fsx
+        run: |
+          dotnet fsi unitTestScript.fsx
+          dotnet fsi simpleParseScript.fsx
 
       - name: Git add & commit
         run: |
