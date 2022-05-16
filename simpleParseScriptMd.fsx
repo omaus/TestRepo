@@ -9,8 +9,8 @@ let parsedInput =
     [|
         for c in input do
             match c with 
-            | '<' -> yield! "&lt"
-            | '>' -> yield! "&gt"
+            //| '<' -> yield! "&lt"
+            //| '>' -> yield! "&gt"
             | '\n' -> yield! "</p><p>"
             | _ -> yield c
     |]
