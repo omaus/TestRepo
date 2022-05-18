@@ -25,11 +25,10 @@ let rec indent level i (oldArr : string []) newArr =
                 String.contains ">" line && 
                 not <| String.contains "/>" line &&
                 not <| String.contains "</" line
-                then level + 1
-            else level
+                then currLevel + 1
+            else currLevel
         let newNewArr = [|yield! newArr; $"{spaces}{line}"|]
-        let finalLevel = newLevel - System.Math.Abs(newLevel - currLevel)
-        indent finalLevel (i + 1) oldArr newNewArr
+        indent newLevel (i + 1) oldArr newNewArr
     else 
         [|yield! newArr; $"{spaces}{line}"|]
 
