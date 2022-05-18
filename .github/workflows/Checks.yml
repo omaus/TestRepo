@@ -36,7 +36,7 @@ jobs:
         #run: dotnet fsi testScript.fsx
         run: |
           dotnet fsi unitTestScript.fsx
-          dotnet fsi simpleParseScriptMd.fsx
+          dotnet fsi simpleParseScriptXml.fsx
 
       - name: Git add & commit
         run: |
@@ -60,6 +60,6 @@ jobs:
       - name: Push changes # push the output folder to your repo
         uses: ad-m/github-push-action@master
         with:
-          #branch: UnitTestResult #ignore if your branch is master
+          branch: UnitTestResult #ignore if your branch is master
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
