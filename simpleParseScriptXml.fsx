@@ -67,7 +67,7 @@ let color =
 
 let jsonString = 
     sprintf 
-        "{\n  \"schemaVersion\": 1,\n  \"label\": \"UnitTests\",\n  \"message\": \"%i\",\n  \"color\": \"%s\"\n}" 
+        "{\n  \"schemaVersion\": 1,\n  \"label\": \"UnitTests\",\n  \"message\": \"%i %%\",\n  \"color\": \"%s\"\n}" 
         unitTestRes 
         color
 
