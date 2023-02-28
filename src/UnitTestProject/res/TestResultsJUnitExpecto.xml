@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+    <testsuite name="UnitTestProject">
+        <testcase name="[Node1; Node2; Node3; ... ]" time="0.005" />
+        <testcase name="[Node1; Tip1]" time="0.005" />
+    </testsuite>
+</testsuites>

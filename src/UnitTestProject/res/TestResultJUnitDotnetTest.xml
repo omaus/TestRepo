@@ -1,0 +1,9 @@
+<testsuites>
+  <testsuite name="UnitTestProject.dll" tests="2" skipped="0" failures="0" errors="0" time="0.012" timestamp="2023-02-27T15:14:11" hostname="NB-W-2020-11-OM" id="0" package="UnitTestProject.dll">
+    <properties />
+    <testcase classname="Node1.Node2.Node3" name="Tip2" time="0.0060000" />
+    <testcase classname="UnknownNamespace.UnknownType" name="Node1.Tip1" time="0.0060000" />
+    <system-out></system-out>
+    <system-err></system-err>
+  </testsuite>
+</testsuites>

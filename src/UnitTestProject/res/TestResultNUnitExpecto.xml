@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-results date="2023-02-27" name="UnitTestProject" total="2" errors="0" failures="0" ignored="0" not-run="0" inconclusive="0" skipped="0" invalid="0" time="14:46:23">
+    <environment expecto-version="9.0.4.0" clr-version="7.0.3" os-version="Microsoft Windows NT 10.0.19044.0" platform="Win32NT" cwd="C:\Repos\omaus\TestRepo\src\UnitTestProject\bin\Debug\net7.0" machine-name="NB-W-2020-11-OM" user="olive" user-domain="NB-W-2020-11-OM" />
+    <culture-info>Expecto.TestResults+xAttr@77-1[System.Object]de-DEExpecto.TestResults+xAttr@77-1[System.Object]en-US</culture-info>
+    <test-suite type="Assembly" name="UnitTestProject" executed="True" result="Success" success="True" time="0.099" asserts="0">
+        <results>
+            <test-case name="[Node1; Tip1]" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+            <test-case name="[Node1; Node2; Node3; ... ]" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+        </results>
+    </test-suite>
+</test-results>

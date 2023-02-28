@@ -1,0 +1,17 @@
+<test-run id="2" duration="0.008" testcasecount="2" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-02-27T 14:57:52Z" end-time="2023-02-27T 14:57:53Z">
+  <test-suite type="Assembly" name="UnitTestProject.dll" fullname="C:\Repos\omaus\TestRepo\src\UnitTestProject\bin\Debug\net7.0\UnitTestProject.dll" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-02-27T 14:57:53Z" end-time="2023-02-27T 14:57:53Z" duration="0.008">
+    <test-suite type="TestSuite" name="UnknownNamespace" fullname="UnknownNamespace" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-02-27T 14:57:53Z" end-time="2023-02-27T 14:57:53Z" duration="0.004">
+      <test-suite type="TestFixture" name="UnknownType" fullname="UnknownNamespace.UnknownType" classname="UnknownNamespace.UnknownType" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-02-27T 14:57:53Z" end-time="2023-02-27T 14:57:53Z" duration="0.004">
+        <test-case name="Node1.Tip1" fullname="UnknownNamespace.UnknownType.Node1.Tip1" methodname="Node1.Tip1" classname="UnknownType" result="Passed" start-time="2023-02-27T 14:57:53Z" end-time="2023-02-27T 14:57:53Z" duration="0.004" asserts="0" />
+      </test-suite>
+    </test-suite>
+    <test-suite type="TestSuite" name="Node1" fullname="Node1" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-02-27T 14:57:53Z" end-time="2023-02-27T 14:57:53Z" duration="0.004">
+      <test-suite type="TestSuite" name="Node2" fullname="Node1.Node2" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-02-27T 14:57:53Z" end-time="2023-02-27T 14:57:53Z" duration="0.004">
+        <test-suite type="TestFixture" name="Node3" fullname="Node1.Node2.Node3" classname="Node1.Node2.Node3" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2023-02-27T 14:57:53Z" end-time="2023-02-27T 14:57:53Z" duration="0.004">
+          <test-case name="Node1.Node2.Node3.Tip2" fullname="Node1.Node2.Node3.Tip2" methodname="Tip2" classname="Node3" result="Passed" start-time="2023-02-27T 14:57:53Z" end-time="2023-02-27T 14:57:53Z" duration="0.004" asserts="0" />
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <errors />
+  </test-suite>
+</test-run>
